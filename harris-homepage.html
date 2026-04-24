@@ -183,6 +183,20 @@ body {
   position: relative;
   overflow: hidden;
 }
+.hhi-hero-bg {
+  position: absolute; inset: 0;
+  background-image: url('hero-house.jpg');
+  background-size: cover;
+  background-position: center top;
+  opacity: 0.18;
+  z-index: 0;
+}
+.hhi-hero-bg::after {
+  content: '';
+  position: absolute; inset: 0;
+  background: linear-gradient(135deg, rgba(27,46,107,0.96) 0%, rgba(27,46,107,0.80) 55%, rgba(15,30,80,0.70) 100%);
+}
+.hhi-hero > * { position: relative; z-index: 1; }
 .hhi-hero::after {
   content: '';
   position: absolute;
@@ -191,6 +205,7 @@ body {
   background: var(--gold);
   border-radius: 50%;
   opacity: 0.07;
+  z-index: 0;
 }
 .hhi-hero-inner { max-width: 1140px; margin: 0 auto; }
 .hhi-hero-badge {
@@ -822,8 +837,9 @@ body {
 <!-- ============================================================
      GHL SECTION 2: HERO — paste into first Section
      ============================================================ -->
-<div style="background: #1B2E6B; padding: 80px 24px;">
-  <div style="max-width: 1140px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center;">
+<div style="background: #1B2E6B; padding: 80px 24px; position: relative; overflow: hidden;">
+  <div class="hhi-hero-bg"></div>
+  <div style="max-width: 1140px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; position: relative; z-index: 1;">
 
     <!-- Left: Copy -->
     <div>
