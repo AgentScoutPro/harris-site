@@ -83,8 +83,13 @@ h2.white { color: #fff; }
 .nav-brand-name { font-family: 'Barlow Condensed', sans-serif; font-weight: 800; font-size: 16px; color: #fff; line-height: 1.1; letter-spacing: 0.01em; }
 .nav-brand-tag { font-family: 'Barlow Condensed', sans-serif; font-size: 10px; font-weight: 600; letter-spacing: 0.16em; text-transform: uppercase; color: var(--gold); margin-top: 2px; }
 .nav-links { display: flex; align-items: center; gap: 28px; list-style: none; }
+.nav-links li { position: relative; }
 .nav-links a { color: rgba(255,255,255,0.8); font-size: 14px; font-weight: 500; transition: color 0.2s; }
 .nav-links a:hover { color: var(--gold-light); }
+.nav-dropdown { position: absolute; top: calc(100% + 18px); left: 0; min-width: 230px; background: #fff; border: 1px solid var(--border); border-top: 3px solid var(--gold); border-radius: 0 0 8px 8px; box-shadow: 0 18px 40px rgba(14,26,56,0.18); padding: 10px 0; opacity: 0; visibility: hidden; transform: translateY(-6px); transition: opacity 0.18s, transform 0.18s, visibility 0.18s; }
+.nav-links li:hover .nav-dropdown, .nav-links li:focus-within .nav-dropdown { opacity: 1; visibility: visible; transform: translateY(0); }
+.nav-dropdown a { display: block; color: var(--navy) !important; padding: 10px 16px; font-size: 14px; white-space: nowrap; }
+.nav-dropdown a:hover { color: var(--navy-dark) !important; background: var(--off-white); }
 .nav-cta { background: var(--gold) !important; color: var(--navy-dark) !important; font-family: 'Barlow Condensed', sans-serif !important; font-weight: 700 !important; font-size: 14px !important; letter-spacing: 0.06em; text-transform: uppercase; padding: 9px 20px !important; border-radius: 4px !important; }
 .nav-cta:hover { background: var(--gold-light) !important; }
 
@@ -341,7 +346,16 @@ section[id] { scroll-margin-top: 96px; }
       </div>
     </a>
     <ul class="nav-links">
-      <li><a href="#services">Services</a></li>
+      <li>
+        <a href="#services">Services</a>
+        <div class="nav-dropdown">
+          <a href="https://hhireno.com/kitchen-remodeling-greenville-nc">Kitchen Remodeling</a>
+          <a href="https://hhireno.com/flooring-installation-greenville-nc">Flooring Installation</a>
+          <a href="https://hhireno.com/roof-repair-greenville-nc">Roofing</a>
+          <a href="https://hhireno.com/general-contractor-greenville-nc">General Contracting</a>
+          <a href="https://hhireno.com/home-remodeling-greenville-nc">Home Remodeling</a>
+        </div>
+      </li>
       <li><a href="#story">Our Story</a></li>
       <li><a href="#areas">Service Areas</a></li>
       <li><a href="#gallery">Our Work</a></li>
@@ -354,6 +368,11 @@ section[id] { scroll-margin-top: 96px; }
   </div>
   <div class="mobile-menu" id="mobileMenu">
     <a href="#services">Services</a>
+    <a href="https://hhireno.com/kitchen-remodeling-greenville-nc">Kitchen Remodeling</a>
+    <a href="https://hhireno.com/flooring-installation-greenville-nc">Flooring Installation</a>
+    <a href="https://hhireno.com/roof-repair-greenville-nc">Roofing</a>
+    <a href="https://hhireno.com/general-contractor-greenville-nc">General Contracting</a>
+    <a href="https://hhireno.com/home-remodeling-greenville-nc">Home Remodeling</a>
     <a href="#story">Our Story</a>
     <a href="#areas">Service Areas</a>
     <a href="#gallery">Our Work</a>
@@ -445,6 +464,14 @@ section[id] { scroll-margin-top: 96px; }
           <h3>Roofing</h3>
           <p>Master Shingle Certified with CertainTeed. Storm damage repair, shingle replacement, and full re-roofs backed by a 50 year warranty across Eastern NC.</p>
           <a href="https://hhireno.com/roof-repair-greenville-nc" class="service-link">Get a Free Quote →</a>
+        </div>
+      </div>
+      <div class="service-card">
+        <img src="after-room-01.jpg" alt="Home remodeling Greenville NC by Harris Home Improvement" width="560" height="230" loading="eager" decoding="sync">
+        <div class="service-body">
+          <h3>Home Remodeling</h3>
+          <p>Room updates, repairs, trim, finishes, and whole-home improvements handled with one accountable team from estimate to final walkthrough.</p>
+          <a href="https://hhireno.com/home-remodeling-greenville-nc" class="service-link">Get a Free Quote →</a>
         </div>
       </div>
       <div class="service-card">
