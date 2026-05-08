@@ -260,6 +260,10 @@ h2.white { color: #fff; }
 .footer-contact { margin-top: 14px; display: flex; flex-direction: column; gap: 5px; }
 .footer-contact a { font-size: 12px; color: rgba(255,255,255,0.55); }
 .footer-contact a:hover { color: var(--gold-light); }
+.footer-credential { margin-top: 22px; display: inline-flex; align-items: center; gap: 12px; max-width: 280px; padding: 12px 14px; background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.12); border-radius: 8px; }
+.footer-credential img { width: 72px; height: 72px; object-fit: contain; flex: 0 0 auto; }
+.credential-copy { font-size: 11px; line-height: 1.5; color: rgba(255,255,255,0.58); }
+.credential-copy strong { display: block; font-family: 'Barlow Condensed', sans-serif; font-size: 13px; font-weight: 800; letter-spacing: 0.08em; text-transform: uppercase; color: var(--gold-light); margin-bottom: 2px; }
 .footer-col h4 { font-family: 'Barlow Condensed', sans-serif; font-size: 12px; font-weight: 700; color: var(--gold); letter-spacing: 0.16em; text-transform: uppercase; margin-bottom: 16px; }
 .footer-col ul { list-style: none; display: flex; flex-direction: column; gap: 8px; }
 .footer-col ul a { font-size: 13px; color: rgba(255,255,255,0.6); }
@@ -295,6 +299,7 @@ section[id] { scroll-margin-top: 96px; }
   .contact-grid { grid-template-columns: 1fr; gap: 36px; }
   .footer-grid { grid-template-columns: 1fr 1fr; }
   .trust { padding: 14px 24px; }
+  .footer-credential { max-width: 320px; }
 }
 @media (max-width: 600px) {
   :root { --pad: 50px 16px; }
@@ -305,6 +310,7 @@ section[id] { scroll-margin-top: 96px; }
   .form-row { grid-template-columns: 1fr; }
   .footer-grid { grid-template-columns: 1fr; }
   .footer { padding: 40px 20px 0; }
+  .footer-credential { width: 100%; max-width: 100%; }
   .footer-bottom { margin: 0 -20px; padding: 13px 20px; }
   .stats-grid { grid-template-columns: repeat(2,1fr); border-radius: 8px; }
   .compare-grid { grid-template-columns: 1fr; }
@@ -777,6 +783,13 @@ section[id] { scroll-margin-top: 96px; }
         <a href="mailto:info@harrishomeimprovement.com">info@harrishomeimprovement.com</a>
         <a href="https://maps.google.com/?q=3211+East+10th+Street+Greenville+NC+27858" target="_blank">3211 East 10th Street, Greenville NC 27858</a>
         <a href="https://hhireno.com">hhireno.com</a>
+      </div>
+      <div class="footer-credential" aria-label="CertainTeed ShingleMaster credential">
+        <img src="shingle-master-logo.png" alt="CertainTeed ShingleMaster Credentialed badge" width="72" height="72" loading="eager" decoding="sync">
+        <div class="credential-copy">
+          <strong>Credentialed Roofer</strong>
+          CertainTeed ShingleMaster standards for roofing installs and replacements.
+        </div>
       </div>
     </div>
     <div class="footer-col">
