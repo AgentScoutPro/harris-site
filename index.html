@@ -11,7 +11,7 @@
 <meta name="geo.placename" content="Greenville, NC">
 <link rel="canonical" href="https://hhireno.com">
 <meta property="og:title" content="Harris Home Improvement | Eastern NC's Veteran General Contractor">
-<meta property="og:description" content="Green Beret built. Bathrooms, kitchens, flooring and roofing across Pitt, Beaufort, Craven, Lenoir and Wilson Counties. Free estimates. (252) 412-8695.">
+<meta property="og:description" content="Veteran-owned home improvement contractor. Bathrooms, kitchens, flooring and roofing across Pitt, Beaufort, Craven, Lenoir and Wilson Counties. Free estimates. (252) 412-8695.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://hhireno.com">
 
@@ -60,7 +60,7 @@ a { text-decoration: none; }
 }
 
 /* ── SHARED ── */
-.wrap { max-width: var(--max); margin: 0 auto; }
+.wrap { width: min(100% - 48px, var(--max)); margin: 0 auto; }
 .label { display: block; font-family: 'Barlow Condensed', sans-serif; font-size: 13px; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold); margin-bottom: 10px; }
 h2 { font-family: 'Barlow Condensed', sans-serif; font-weight: 800; font-size: clamp(30px, 4vw, 44px); line-height: 1.05; color: var(--navy); margin-bottom: 16px; }
 h2 span { color: var(--gold); }
@@ -75,10 +75,10 @@ h2.white { color: #fff; }
 
 /* ── NAV ── */
 .nav { background: var(--navy-dark); border-bottom: 3px solid var(--gold); position: sticky; top: 0; z-index: 100; }
-.nav-inner { max-width: var(--max); margin: 0 auto; padding: 0 40px; height: 76px; display: flex; align-items: center; justify-content: space-between; }
+.nav-inner { width: min(100% - 48px, var(--max)); margin: 0 auto; height: 76px; display: flex; align-items: center; justify-content: space-between; }
 .nav-brand { display: flex; align-items: center; gap: 12px; }
-.nav-logo-box { background: #fff; border-radius: 6px; width: 56px; height: 56px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
-.nav-logo-box img { width: 46px; height: 46px; object-fit: contain; }
+.nav-logo-box { background: #fff; border-radius: 6px; width: 58px; height: 58px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; overflow: hidden; }
+.nav-logo-box img { width: 52px; height: 52px; object-fit: contain; }
 .nav-brand-text { display: flex; flex-direction: column; }
 .nav-brand-name { font-family: 'Barlow Condensed', sans-serif; font-weight: 800; font-size: 16px; color: #fff; line-height: 1.1; letter-spacing: 0.01em; }
 .nav-brand-tag { font-family: 'Barlow Condensed', sans-serif; font-size: 10px; font-weight: 600; letter-spacing: 0.16em; text-transform: uppercase; color: var(--gold); margin-top: 2px; }
@@ -98,9 +98,9 @@ h2.white { color: #fff; }
 
 /* ── HERO ── */
 .hero { background: var(--navy); padding: 80px 40px; position: relative; overflow: hidden; }
-.hero::before { content: ''; position: absolute; inset: 0; background: url('https://hhireno.com/harris-roof-003.png') center/cover no-repeat; opacity: 0.08; }
-.hero-inner { max-width: var(--max); margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; position: relative; z-index: 1; }
-.hero h1 { font-family: 'Barlow Condensed', sans-serif; font-weight: 900; font-size: clamp(40px, 5.5vw, 64px); color: #fff; line-height: 0.95; letter-spacing: -0.01em; margin-bottom: 20px; }
+.hero::before { content: ''; position: absolute; inset: 0; background: url('hero-house.jpg') center/cover no-repeat; opacity: 0.10; }
+.hero-inner { width: min(100% - 48px, var(--max)); margin: 0 auto; display: grid; grid-template-columns: minmax(0, 0.92fr) minmax(420px, 1.08fr); gap: 60px; align-items: center; position: relative; z-index: 1; }
+.hero h1 { font-family: 'Barlow Condensed', sans-serif; font-weight: 900; font-size: clamp(40px, 5.5vw, 64px); color: #fff; line-height: 0.96; letter-spacing: 0; margin-bottom: 20px; }
 .hero h1 em { font-style: normal; color: var(--gold); display: block; }
 .hero-sub { font-size: 17px; color: rgba(255,255,255,0.72); line-height: 1.75; margin-bottom: 32px; max-width: 480px; }
 .hero-btns { display: flex; gap: 14px; flex-wrap: wrap; }
@@ -179,12 +179,16 @@ h2.white { color: #fff; }
 /* ── GALLERY ── */
 .gallery { background: #fff; padding: var(--pad); }
 .gallery-header { margin-bottom: 44px; }
-.gallery-grid { display: grid; grid-template-columns: repeat(2,1fr); gap: 20px; }
-.gallery-item { border-radius: 8px; overflow: hidden; position: relative; }
-.gallery-item img { width: 100%; height: 320px; object-fit: cover; display: block; transition: transform 0.4s; }
-.gallery-item:hover img { transform: scale(1.03); }
-.gallery-caption { position: absolute; bottom: 0; left: 0; right: 0; background: linear-gradient(transparent, rgba(19,34,79,0.88)); padding: 28px 18px 16px; }
-.gallery-caption span { font-family: 'Barlow Condensed', sans-serif; font-size: 14px; font-weight: 700; color: var(--gold); letter-spacing: 0.12em; text-transform: uppercase; }
+.gallery-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px; }
+.gallery-item { border: 1px solid var(--border); border-radius: 8px; overflow: hidden; background: #fff; box-shadow: 0 12px 34px rgba(27,46,107,0.08); }
+.compare-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.compare-shot { position: relative; min-width: 0; }
+.compare-shot img { width: 100%; height: 260px; object-fit: cover; display: block; }
+.compare-tag { position: absolute; top: 12px; left: 12px; background: rgba(19,34,79,0.92); color: #fff; border: 1px solid rgba(255,255,255,0.18); border-radius: 4px; padding: 5px 9px; font-family: 'Barlow Condensed', sans-serif; font-size: 11px; font-weight: 800; letter-spacing: 0.12em; text-transform: uppercase; }
+.compare-tag.after { background: var(--gold); color: var(--navy-dark); border-color: transparent; }
+.gallery-caption { padding: 18px 20px 20px; border-top: 4px solid var(--gold); }
+.gallery-caption span { display: block; font-family: 'Barlow Condensed', sans-serif; font-size: 18px; font-weight: 800; color: var(--navy); letter-spacing: 0.04em; text-transform: uppercase; margin-bottom: 4px; }
+.gallery-caption p { color: var(--text); font-size: 14px; line-height: 1.65; }
 .gallery-cta { text-align: center; margin-top: 36px; }
 
 /* ── AREAS ── */
@@ -263,8 +267,10 @@ h2.white { color: #fff; }
 .footer-bottom { max-width: 100%; background: var(--gold); margin: 0 -40px; padding: 13px 40px; text-align: center; font-size: 12px; color: var(--navy-dark); font-weight: 600; }
 .footer-bottom a { color: var(--navy-dark); font-weight: 700; }
 
+section[id] { scroll-margin-top: 96px; }
+
 /* ── FLOAT BUTTON ── */
-.float-cta { position: fixed; bottom: 22px; right: 22px; background: var(--gold); color: var(--navy-dark); font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 14px; letter-spacing: 0.08em; text-transform: uppercase; padding: 13px 22px; border-radius: 4px; box-shadow: 0 4px 20px rgba(0,0,0,0.3); z-index: 99; transition: transform 0.2s, background 0.2s; display: flex; flex-direction: column; align-items: center; }
+.float-cta { position: fixed; bottom: 22px; right: 22px; background: var(--gold); color: var(--navy-dark); font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 14px; letter-spacing: 0.08em; text-transform: uppercase; padding: 13px 22px; border-radius: 4px; box-shadow: 0 4px 20px rgba(0,0,0,0.3); z-index: 99; transition: transform 0.2s, background 0.2s; display: none; flex-direction: column; align-items: center; }
 .float-cta span { font-size: 10px; font-weight: 400; opacity: 0.8; }
 .float-cta:hover { transform: translateY(-2px); background: var(--gold-light); }
 
@@ -288,11 +294,11 @@ h2.white { color: #fff; }
   .reviews-grid { grid-template-columns: 1fr; }
   .contact-grid { grid-template-columns: 1fr; gap: 36px; }
   .footer-grid { grid-template-columns: 1fr 1fr; }
-  .nav-inner { padding: 0 24px; }
   .trust { padding: 14px 24px; }
 }
 @media (max-width: 600px) {
   :root { --pad: 50px 16px; }
+  .wrap, .nav-inner, .hero-inner { width: min(100% - 32px, var(--max)); }
   .hero { padding: 50px 16px; }
   .hero-btns { flex-direction: column; }
   .btn-gold, .btn-ghost { width: 100%; text-align: center; }
@@ -301,6 +307,8 @@ h2.white { color: #fff; }
   .footer { padding: 40px 20px 0; }
   .footer-bottom { margin: 0 -20px; padding: 13px 20px; }
   .stats-grid { grid-template-columns: repeat(2,1fr); border-radius: 8px; }
+  .compare-grid { grid-template-columns: 1fr; }
+  .compare-shot img { height: 220px; }
   .trust-inner { gap: 16px; }
   .about-btns { flex-direction: column; }
   .btn-gold, .btn-navy { width: 100%; text-align: center; }
@@ -314,7 +322,7 @@ h2.white { color: #fff; }
   <div class="nav-inner">
     <a href="https://hhireno.com" class="nav-brand">
       <div class="nav-logo-box">
-        <img src="https://hhireno.com/hhi-logo.png" alt="HHI Custom Renovations logo" loading="eager">
+        <img src="harris-custom-logo-01.png" alt="HHI Custom Renovations logo" loading="eager">
       </div>
       <div class="nav-brand-text">
         <span class="nav-brand-name">Harris Home Improvement</span>
@@ -356,7 +364,7 @@ h2.white { color: #fff; }
     </div>
     <div class="hero-right">
       <div class="hero-img-wrap">
-        <img src="https://hhireno.com/harris-roof-003.png" alt="Harris Home Improvement completed roofing project Greenville NC" width="560" height="340" loading="eager" fetchpriority="high">
+        <img src="hero-house.jpg" alt="Harris Home Improvement completed project in Greenville NC" width="560" height="340" loading="eager" fetchpriority="high">
         <div class="hero-img-caption"><span>Greenville, NC · Completed Project</span></div>
       </div>
       <div class="hero-stats">
@@ -405,7 +413,7 @@ h2.white { color: #fff; }
     </div>
     <div class="services-grid">
       <div class="service-card">
-        <img src="https://hhireno.com/kitchen-after-harris-home-remodel-004.jpeg" alt="Bathroom and kitchen remodel Greenville NC by Harris Home Improvement" width="560" height="230" loading="lazy" decoding="async">
+        <img src="after-kitchen-01.jpg" alt="Bathroom and kitchen remodel Greenville NC by Harris Home Improvement" width="560" height="230" loading="lazy" decoding="async">
         <div class="service-body">
           <h3>Bathroom and Kitchen Remodels</h3>
           <p>Full remodels or targeted upgrades including tile work, cabinetry, countertops, fixtures, and plumbing. Built to last in Pitt County homes.</p>
@@ -413,7 +421,7 @@ h2.white { color: #fff; }
         </div>
       </div>
       <div class="service-card">
-        <img src="https://hhireno.com/floors-after-harris-home-remodel-003.jpeg" alt="Hardwood flooring installation Eastern NC by Harris Home Improvement" width="560" height="230" loading="lazy" decoding="async">
+        <img src="after-flooring-01.jpg" alt="Hardwood flooring installation Eastern NC by Harris Home Improvement" width="560" height="230" loading="lazy" decoding="async">
         <div class="service-body">
           <h3>Flooring Installation</h3>
           <p>Hardwood, LVP, tile, and laminate installed to spec with clean transitions and lasting results. Serving homeowners across Greenville, Winterville, New Bern, and surrounding Eastern NC.</p>
@@ -421,7 +429,7 @@ h2.white { color: #fff; }
         </div>
       </div>
       <div class="service-card">
-        <img src="https://hhireno.com/harris-roof-003.png" alt="Roofing contractor Eastern NC by Harris Home Improvement" width="560" height="230" loading="lazy" decoding="async">
+        <img src="roof-after.jpg" alt="Roofing contractor Eastern NC by Harris Home Improvement" width="560" height="230" loading="lazy" decoding="async">
         <div class="service-body">
           <h3>Roofing</h3>
           <p>Master Shingle Certified with CertainTeed. Storm damage repair, shingle replacement, and full re-roofs backed by a 50 year warranty across Eastern NC.</p>
@@ -429,7 +437,7 @@ h2.white { color: #fff; }
         </div>
       </div>
       <div class="service-card">
-        <img src="https://hhireno.com/after-room-07.jpg" alt="General contracting Greenville NC by Harris Home Improvement" width="560" height="230" loading="lazy" decoding="async">
+        <img src="after-room-07.jpg" alt="General contracting Greenville NC by Harris Home Improvement" width="560" height="230" loading="lazy" decoding="async">
         <div class="service-body">
           <h3>General Contracting</h3>
           <p>Additions, repairs, exterior work, and everything in between. One point of contact from start to finish serving Pitt, Beaufort, Craven, Lenoir, and Wilson Counties.</p>
@@ -445,7 +453,7 @@ h2.white { color: #fff; }
   <div class="wrap">
     <div class="about-grid">
       <div class="about-img-wrap">
-        <img src="https://hhireno.com/greg-harris-bio-high-res.png" alt="Greg Harris, owner of Harris Home Improvement, veteran general contractor Greenville NC" width="560" height="520" loading="lazy" decoding="async">
+        <img src="greg-harris-bio-new.jpeg" alt="Greg Harris, owner of Harris Home Improvement, veteran general contractor Greenville NC" width="560" height="520" loading="lazy" decoding="async">
         <div class="about-badge">
           <span class="about-badge-num">U.S.</span>
           <span class="about-badge-text">Army Special<br>Operations</span>
@@ -518,20 +526,56 @@ h2.white { color: #fff; }
     </div>
     <div class="gallery-grid">
       <div class="gallery-item">
-        <img src="https://hhireno.com/kitchen-after-harris-home-remodel-004.jpeg" alt="Kitchen remodel Greenville NC by Harris Home Improvement" width="560" height="320" loading="lazy" decoding="async">
-        <div class="gallery-caption"><span>Kitchen Remodel, Greenville NC</span></div>
+        <div class="compare-grid">
+          <div class="compare-shot">
+            <img src="before-kitchen-01.jpg" alt="Kitchen before remodel in Greenville NC" width="560" height="320" loading="lazy" decoding="async">
+            <div class="compare-tag">Before</div>
+          </div>
+          <div class="compare-shot">
+            <img src="after-kitchen-01.jpg" alt="Kitchen after remodel by Harris Home Improvement" width="560" height="320" loading="lazy" decoding="async">
+            <div class="compare-tag after">After</div>
+          </div>
+        </div>
+        <div class="gallery-caption"><span>Kitchen Remodel</span><p>Cabinetry, finishes, layout updates, and a clean final walkthrough.</p></div>
       </div>
       <div class="gallery-item">
-        <img src="https://hhireno.com/floors-after-harris-home-remodel-003.jpeg" alt="Hardwood flooring installation Eastern NC" width="560" height="320" loading="lazy" decoding="async">
-        <div class="gallery-caption"><span>Hardwood Flooring, Eastern NC</span></div>
+        <div class="compare-grid">
+          <div class="compare-shot">
+            <img src="before-room-02.jpg" alt="Room before flooring installation in Eastern NC" width="560" height="320" loading="lazy" decoding="async">
+            <div class="compare-tag">Before</div>
+          </div>
+          <div class="compare-shot">
+            <img src="after-flooring-01.jpg" alt="Room after flooring installation by Harris Home Improvement" width="560" height="320" loading="lazy" decoding="async">
+            <div class="compare-tag after">After</div>
+          </div>
+        </div>
+        <div class="gallery-caption"><span>Flooring Installation</span><p>Level prep, tight transitions, durable materials, and clean job-site standards.</p></div>
       </div>
       <div class="gallery-item">
-        <img src="https://hhireno.com/harris-roof-003.png" alt="Roof replacement Eastern NC by Harris Home Improvement" width="560" height="320" loading="lazy" decoding="async">
-        <div class="gallery-caption"><span>Roof Replacement, Eastern NC</span></div>
+        <div class="compare-grid">
+          <div class="compare-shot">
+            <img src="roof-before.jpg" alt="Roof before replacement in Eastern NC" width="560" height="320" loading="lazy" decoding="async">
+            <div class="compare-tag">Before</div>
+          </div>
+          <div class="compare-shot">
+            <img src="roof-after.jpg" alt="Roof after replacement by Harris Home Improvement" width="560" height="320" loading="lazy" decoding="async">
+            <div class="compare-tag after">After</div>
+          </div>
+        </div>
+        <div class="gallery-caption"><span>Roof Replacement</span><p>Storm-ready roofing work with clear scope and warranty-minded installation.</p></div>
       </div>
       <div class="gallery-item">
-        <img src="https://hhireno.com/after-room-07.jpg" alt="Room renovation Greenville NC by Harris Home Improvement" width="560" height="320" loading="lazy" decoding="async">
-        <div class="gallery-caption"><span>Room Renovation, Greenville NC</span></div>
+        <div class="compare-grid">
+          <div class="compare-shot">
+            <img src="before-room-05.jpg" alt="Room before renovation in Greenville NC" width="560" height="320" loading="lazy" decoding="async">
+            <div class="compare-tag">Before</div>
+          </div>
+          <div class="compare-shot">
+            <img src="after-room-07.jpg" alt="Room after renovation by Harris Home Improvement" width="560" height="320" loading="lazy" decoding="async">
+            <div class="compare-tag after">After</div>
+          </div>
+        </div>
+        <div class="gallery-caption"><span>Interior Renovation</span><p>Repairs, trim, surfaces, and finishing details handled by one accountable team.</p></div>
       </div>
     </div>
     <div class="gallery-cta">
@@ -724,7 +768,7 @@ h2.white { color: #fff; }
   <div class="footer-grid">
     <div>
       <div class="footer-brand-row">
-        <div class="footer-logo"><img src="https://hhireno.com/hhi-logo.png" alt="HHI Custom Renovations" style="height:36px;width:auto;"></div>
+        <div class="footer-logo"><img src="harris-custom-logo-01.png" alt="HHI Custom Renovations" style="height:36px;width:auto;"></div>
         <div><div class="footer-name">Harris Home Improvement</div><span class="footer-tag">Custom Renovations · Eastern NC</span></div>
       </div>
       <p class="footer-desc">Veteran-owned general contractor serving Pitt, Beaufort, Craven, Lenoir and Wilson Counties. Bathrooms, kitchens, flooring and roofing. Built on integrity.</p>
