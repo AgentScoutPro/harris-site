@@ -247,6 +247,11 @@ h2.white { color: #fff; }
 .form-submit { width: 100%; background: var(--navy); color: #fff; font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 16px; letter-spacing: 0.08em; text-transform: uppercase; padding: 14px; border: none; border-radius: 4px; cursor: pointer; transition: background 0.2s; margin-top: 4px; }
 .form-submit:hover { background: var(--navy-mid); }
 .form-note { text-align: center; font-size: 11px; color: var(--text-light); margin-top: 10px; }
+.form-success { display: none; margin-top: 18px; padding: 18px; background: #edf9f3; border: 1px solid #9fd8b8; border-left: 5px solid #0f6e56; border-radius: 8px; color: #123d2a; }
+.form-success.is-visible { display: block; }
+.form-success strong { display: block; font-family: 'Barlow Condensed', sans-serif; font-size: 20px; font-weight: 800; color: #0f4f3c; letter-spacing: 0.02em; margin-bottom: 4px; }
+.form-success p { font-size: 14px; line-height: 1.65; margin: 0; }
+.form-success a { color: #0f4f3c; font-weight: 800; white-space: nowrap; }
 
 /* ── FOOTER ── */
 .footer { background: var(--navy-dark); padding: 56px 40px 0; }
@@ -764,6 +769,10 @@ section[id] { scroll-margin-top: 96px; }
         <div class="form-group"><label class="form-lbl">Tell Us About Your Project</label><textarea class="form-textarea" placeholder="Brief description of what you need done..."></textarea></div>
         <button class="form-submit" onclick="submitForm(this)">Request My Free Estimate</button>
         <p class="form-note">We respond within 1 business day. No spam.</p>
+        <div class="form-success" id="estimateSuccess" role="status" aria-live="polite" tabindex="-1">
+          <strong>Your request has been sent.</strong>
+          <p>Thank you for reaching out to Harris Home Improvement. For immediate service or support, please call <a href="tel:+12524128695">(252) 412-8695</a>.</p>
+        </div>
       </div>
     </div>
   </div>
@@ -840,6 +849,12 @@ function submitForm(btn) {
   btn.textContent = 'Request Sent. We will be in touch soon!';
   btn.style.background = '#0f6e56';
   btn.disabled = true;
+  var success = document.getElementById('estimateSuccess');
+  if (success) {
+    success.classList.add('is-visible');
+    success.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+    success.focus({ preventScroll: true });
+  }
 }
 
 // Nav active state
