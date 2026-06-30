@@ -1,4 +1,17 @@
 {
   "cleanUrls": true,
-  "trailingSlash": false
+  "trailingSlash": false,
+  "redirects": [
+    {
+      "source": "/:path*",
+      "has": [{ "type": "host", "value": "www.hhireno.com" }],
+      "destination": "https://hhireno.com/:path*",
+      "permanent": true
+    },
+    {
+      "source": "/services/flooring-installation/greenville-nc",
+      "destination": "/flooring-installation-greenville-nc",
+      "permanent": true
+    }
+  ]
 }
